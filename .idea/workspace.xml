@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1052c8f-ae39-4314-b752-9edd432c29a7" name="Default Changelist" comment="" />
+    <list default="true" id="f1052c8f-ae39-4314-b752-9edd432c29a7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/views/About.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/views/Home.vue" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -21,7 +38,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gitignore" value="17" />
+          <entry key="gitignore" value="18" />
           <entry key="js" value="1" />
           <entry key="xml" value="1" />
         </counts>
@@ -29,7 +46,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JavaScript" value="1" />
-          <entry key="PLAIN_TEXT" value="17" />
+          <entry key="PLAIN_TEXT" value="18" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
@@ -68,6 +85,8 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/一加商城/oneplus-demo/mock-server/node_modules" />
     <handled-path value="$PROJECT_DIR$/一加商城/oneplus-demo/yijia/node_modules" />
+    <handled-path value="$PROJECT_DIR$/音乐App/musicApp-demo/NeteaseCloudMusicApi/node_modules" />
+    <handled-path value="$PROJECT_DIR$/音乐App/musicApp-demo/music/node_modules" />
     <handled-path value="$PROJECT_DIR$/魅族商城/meizu-demo/meizu/node_modules" />
     <handled-path value="$PROJECT_DIR$/魅族商城/meizu-demo/mock-server/node_modules" />
   </component>
@@ -75,6 +94,8 @@
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/一加商城/oneplus-demo/mock-server/package.json" />
       <path value="$PROJECT_DIR$/一加商城/oneplus-demo/yijia/package.json" />
+      <path value="$PROJECT_DIR$/音乐App/musicApp-demo/NeteaseCloudMusicApi/package.json" />
+      <path value="$PROJECT_DIR$/音乐App/musicApp-demo/music/package.json" />
       <path value="$PROJECT_DIR$/魅族商城/meizu-demo/meizu/package.json" />
       <path value="$PROJECT_DIR$/魅族商城/meizu-demo/mock-server/package.json" />
     </packageJsonPaths>
@@ -85,6 +106,7 @@
     <option name="width" value="1346" />
     <option name="height" value="688" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -96,6 +118,17 @@
             <path>
               <item name="Personal_project_code" type="b2602c69:ProjectViewProjectNode" />
               <item name="Personal_project_code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Personal_project_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Personal_project_code" type="462c0819:PsiDirectoryNode" />
+              <item name="音乐App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Personal_project_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Personal_project_code" type="462c0819:PsiDirectoryNode" />
+              <item name="音乐App" type="462c0819:PsiDirectoryNode" />
+              <item name="musicApp-demo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -113,11 +146,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Git个人项目代码存放\Personal_project_code\音乐App\musicApp-demo" />
       <recent name="F:\Git个人项目代码存放\Personal_project_code\魅族商城\meizu-demo" />
       <recent name="F:\Git个人项目代码存放\Personal_project_code\魅族商城\meizu-demo\mock-server" />
       <recent name="F:\Git个人项目代码存放\Personal_project_code" />
       <recent name="F:\Git个人项目代码存放\Personal_project_code\一加商城\oneplus-demo" />
-      <recent name="F:\Git个人项目代码存放\Personal_project_code\一加商城" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -142,15 +175,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561879196899</updated>
-      <workItem from="1561879198471" duration="3766000" />
+      <workItem from="1561879198471" duration="4821000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3766000" />
+    <option name="totallyTimeSpent" value="4821000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
@@ -228,6 +261,9 @@
           <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/音乐App/musicApp-demo/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
