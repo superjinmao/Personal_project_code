@@ -1,0 +1,130 @@
+/*小导航*/
+.nav-wrap{
+	width: 100%;
+	height: 120px;
+	margin-top: 35px;
+	margin-bottom: 25px;
+}
+.nav-wrap .wrap{
+	height: 120px;
+	border: 1px solid #D9D9D9;
+}
+.nav-wrap .title{
+	float: left;
+	width: 180px;
+	height: 120px;
+	background-color: #E6E6E6;
+	text-align: center;
+	padding-top: 32px;
+	box-sizing: border-box;
+}
+.nav-wrap .title h2{
+	font-size: 34px;
+	color: #CB000F;
+	
+}
+.nav-wrap .title span{
+	font-size: 14px;
+}
+.nav-wrap .prompt{
+	float: left;
+	height: 120px;
+	width: 826px;
+	
+	
+}
+
+/*上图片 + 底下内容介绍*/
+ .list-group .item{
+	width: 320px;
+	height: 210px;
+	float: left;
+	margin-bottom: 20px;
+	position: relative;
+}
+ .list-group .item p{
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	height: 31px;
+	line-height: 30px;
+	bottom: 0px;
+	left: 0;
+	color: #E6E6E6;
+	font-size: 14px;
+	background-color:rgba(0,0,0,0.4)
+}
+/*more图标*/
+.more{
+	background: url(../img/more.png);
+ 	background-size: 100% 100%;	
+ 	display: inline-block;
+ 	width: 48px;
+ 	height: 9px;
+}
+
+/*按钮导航*/
+ .btn-group{
+	text-align: center;
+	margin-bottom: 48px;
+}
+ .btn-group a{
+	padding: 3px 11px;
+	color: #474747;
+	border: 1px solid #D9D9D9;
+}
+ .btn-group a.active{
+	background-color: #CF020E;
+	color: white;
+}
+
+/*左边图片 + 右边内容*/
+ .contents-group{
+	width: 480px;
+	margin-top: 17px;
+	border-bottom: 1px solid #D8D8D8;
+}
+ .contents-group .img{
+	width: 180px;
+	height: 142px;
+	
+}
+ .contents-group .img img{
+	width: 100%;
+	height: 100%;
+}
+ .contents-group .text{
+	width: calc(100% - 201px);
+	height: 142px;
+	margin-left: 20px;
+	line-height: 25px;
+	margin-bottom: 20px;
+}
+ .contents-group .text h3{
+	font-size: 18px;
+	color: #474747;
+	margin-bottom: 20px;
+}
+ .contents-group .text p{
+	font-size: 12px;
+	color: #666666;
+}
+  .contents-list{
+	width: 100%;
+	height: 172px;
+	font-size: 12px;
+}
+  .contents-list p{
+	color: #4F4F4F;
+	border-bottom: 1px solid #D8D8D8;
+	line-height: 40px;
+}
+ .contents-list p:nth-of-type(1){
+}
+ .contents-list span{
+	float: right;
+	color: #C7C7C7;
+}
+ .contents-group .img,.contents-group .text{
+	float: left;
+}

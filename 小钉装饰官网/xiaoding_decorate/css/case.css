@@ -1,0 +1,64 @@
+.content{
+	
+}
+.content .prompt .item{
+	line-height: 39px;
+	border-bottom: 1px solid #D8D8D8;
+}
+.content .prompt .item:nth-last-of-type(1){
+	border-bottom:none;
+}
+.content .prompt .item a{
+	color: #494949;
+	font-size: 12px;
+	padding: 0px 18px;
+}
+.content .prompt .item a.head{
+	display: inline-block;
+	width: 90px;
+	height: 40px;
+	/*box-sizing: border-box;*/
+	padding: 0;
+	font-size: 16px;
+	border-right: 1px solid #D8D8D8;
+	text-align: center;
+}
+.content .prompt .item a.bgc{
+	font-size: 16px;
+	color: white;
+	background-color: #CF020E;
+	padding-bottom: 2px;
+}
+
+.content .case{
+	margin-bottom: 20px;
+}
+.content .case .img{
+	float: left;
+	width: 321px;
+	height: 212px;
+	margin-bottom: 20px;
+}
+.content .case .img:nth-of-type(2),
+.content .case .img:nth-of-type(5),
+.content .case .img:nth-of-type(8){
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.content .case .img img{
+	width: 100%;
+	height: 100%;
+}
+.content .btn-group{
+	text-align: center;
+	margin-bottom: 48px;
+}
+.content .btn-group a{
+	padding: 3px 11px;
+	color: #474747;
+	border: 1px solid #D9D9D9;
+}
+.content .btn-group a.active{
+	background-color: #CF020E;
+	color: white;
+}

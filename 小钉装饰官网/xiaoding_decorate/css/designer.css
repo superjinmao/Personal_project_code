@@ -1,0 +1,60 @@
+.content .prompt .text{
+	text-align: center;
+	height: 80px;
+	line-height: 80px;
+	color: #616161;
+	font-size: 20px;
+}
+.content .prompt .text span{
+	font-size: 24px;
+	color: #C0100D;
+	font-weight: bold;
+}
+.content .prompt .item{
+	border-top: 1px solid #D8D8D8;
+	height: 39px;
+	line-height: 39px;
+}
+.content .prompt .item a{
+	color: #494949;
+	font-size: 12px;
+	padding: 0px 18px;
+}
+.content .prompt .item a.head{
+	display: inline-block;
+	width: 90px;
+	height: 40px;
+	/*box-sizing: border-box;*/
+	padding: 0;
+	font-size: 16px;
+	border-right: 1px solid #D8D8D8;
+	text-align: center;
+}
+.content .prompt .item a.bgc{
+	font-size: 16px;
+	color: white;
+	background-color: #CF020E;
+	padding-bottom: 2px;
+}
+.content .designers{
+	padding-top: 15px;
+	box-sizing: border-box;
+	margin-bottom: 25px;
+}
+.content .designers .item{
+	width: 189px;
+	height: 321px;
+	float: left;
+	margin-left: 15px;
+	margin-bottom: 15px;
+}
+.content .designers .row .item:nth-of-type(1){
+	margin-left: 0;
+}
+.content .designers .item img{
+	width: 100%;
+	height: 100%;
+}
+.btn-group {
+    margin-bottom: 35px;
+}
