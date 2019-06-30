@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1052c8f-ae39-4314-b752-9edd432c29a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/babel.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/postcss.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/views/About.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/音乐App/musicApp-demo/music/src/views/Home.vue" afterDir="false" />
-    </list>
+    <list default="true" id="f1052c8f-ae39-4314-b752-9edd432c29a7" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -31,6 +15,7 @@
     <session id="1147752118">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -118,6 +103,17 @@
               <item name="Personal_project_code" type="b2602c69:ProjectViewProjectNode" />
               <item name="Personal_project_code" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Personal_project_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Personal_project_code" type="462c0819:PsiDirectoryNode" />
+              <item name="音乐App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Personal_project_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Personal_project_code" type="462c0819:PsiDirectoryNode" />
+              <item name="音乐App" type="462c0819:PsiDirectoryNode" />
+              <item name="musicApp-demo" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -127,7 +123,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/Git作业提交/homework" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -163,12 +159,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561879196899</updated>
-      <workItem from="1561879198471" duration="5261000" />
+      <workItem from="1561879198471" duration="5675000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5261000" />
+    <option name="totallyTimeSpent" value="5675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
