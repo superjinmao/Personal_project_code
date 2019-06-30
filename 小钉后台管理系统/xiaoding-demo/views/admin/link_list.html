@@ -1,0 +1,247 @@
+﻿        <%- include('header.html')%>
+
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="main-container-inner">
+				<a class="menu-toggler" id="menu-toggler" href="#">
+					<span class="menu-text"></span>
+				</a>
+
+				<!--公用的侧边菜单拆分-->
+				<%- include('sidebar.html')%>
+
+				<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="index.html">首页</a>
+							</li>
+							<li class="active">链接列表</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+
+					<div class="page-content">
+
+						<div class="page-header">
+							<h1>
+								链接列表
+							</h1>
+						</div><!-- /.page-header -->
+
+
+
+						<!--表格-->
+
+						<div class="table-responsive">
+							<table id="sample-table-1" class="table table-striped table-bordered table-hover center">
+								<thead>
+									<tr>
+
+										<th class="center">编号</th>
+										<th class="center">链接名称</th>
+										<th class="hidden-480 center">链接地址</th>
+										<th class="hidden-480 center">链接排序</th>
+										<th class="center">
+											<i class="icon-time bigger-110 hidden-480"></i>
+											链接描述
+										</th>
+
+										<th width="80px;" class="center">操作</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<!--<tr class="">-->
+
+
+										<!--<td>-->
+											<!--1-->
+										<!--</td>-->
+										<!--<td>螺钉学习系统</td>-->
+										<!--<td class="hidden-480">http://edu.nodeing.com</td>-->
+										<!--<td>1</td>-->
+										<!--<td>螺钉在线学习系统</td>-->
+
+
+										<!--<td>-->
+											<!--<div class="visible-md visible-lg hidden-sm hidden-xs btn-group center">-->
+
+
+												<!--<a href='/admin/link/edit' class="btn btn-xs btn-info">-->
+													<!--<i class="icon-edit bigger-120"></i>-->
+													<!--&lt;!&ndash; <a  style="color: white; text-decoration: none"></a> &ndash;&gt;-->
+												<!--</a>-->
+												<!--&nbsp;-->
+												<!--<button class="btn btn-xs btn-danger">-->
+													<!--<i class="icon-trash bigger-120"></i>-->
+												<!--</button>-->
+
+											<!--</div>-->
+
+										<!--</td>-->
+									<!--</tr>-->
+
+									<!--<tr class="">-->
+
+
+										<!--<td>-->
+											<!--2-->
+										<!--</td>-->
+										<!--<td>螺钉博客</td>-->
+										<!--<td class="hidden-480">http://blog.nodeing.com</td>-->
+										<!--<td>2</td>-->
+										<!--<td>螺钉课堂官方博客</td>-->
+
+										<!--<td>-->
+											<!--<div class="visible-md visible-lg hidden-sm hidden-xs btn-group center">-->
+
+
+												<!--<button class="btn btn-xs btn-info">-->
+													<!--<i class="icon-edit bigger-120"></i>-->
+												<!--</button>-->
+												<!--&nbsp;-->
+												<!--<button class="btn btn-xs btn-danger">-->
+													<!--<i class="icon-trash bigger-120"></i>-->
+												<!--</button>-->
+
+											<!--</div>-->
+
+										<!--</td>-->
+									<!--</tr>-->
+
+
+									<!--<tr class="">-->
+
+
+										<!--<td>-->
+											<!--3-->
+										<!--</td>-->
+										<!--<td>螺钉文档</td>-->
+										<!--<td class="hidden-480">http://book.nodeing.com</td>-->
+										<!--<td>3</td>-->
+										<!--<td>螺钉课堂文档发布网站</td>-->
+										<!--<td>-->
+											<!--<div class="visible-md visible-lg hidden-sm hidden-xs btn-group center">-->
+
+
+												<!--<button class="btn btn-xs btn-info">-->
+													<!--<i class="icon-edit bigger-120"></i>-->
+												<!--</button>-->
+												<!--&nbsp;-->
+												<!--<button class="btn btn-xs btn-danger">-->
+													<!--<i class="icon-trash bigger-120"></i>-->
+												<!--</button>-->
+
+											<!--</div>-->
+
+										<!--</td>-->
+									<!--</tr>-->
+
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+				</div><!-- /.main-content -->
+
+			</div><!-- /.main-container-inner -->
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="icon-double-angle-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<%- include('footer.html')%>
+
+		<script src="/admin/js/jquery-2.0.3.min.js"></script>
+		<script>
+			$(function () {
+                // 友情链接列表渲染
+                $.ajax({
+                    type: 'GET',
+                    url: '/admin/link/linkList',
+                    success: function (result) {
+                        if (result.success === 'success') {
+                            for (var i = 0;i<result.data.length;i++) {
+                                var newTr = $('<tr></tr>');
+                                var obj = result.data[i];
+                                for (var item in obj) {
+                                    var newTd  = $('<td></td>');
+                                    newTd.html(obj[item]);
+                                    newTr.append(newTd)
+                                }
+                                var op = $('<td></td>');
+                                op.html(`											<div class="visible-md visible-lg hidden-sm hidden-xs btn-group center">
+												<a href='/admin/link/edit' class="btn btn-xs btn-info">
+													<i class="icon-edit bigger-120"></i>
+													<!-- <a  style="color: white; text-decoration: none"></a> -->
+												</a>
+												&nbsp;
+												<button class="btn btn-xs btn-danger">
+													<i class="icon-trash bigger-120" title="delete"></i>
+												</button>
+
+											</div>`);
+                                newTr.append(op);
+                                $('tbody').append(newTr)
+                            }
+                        } else {
+                            console.log('数据获取失败')
+                        }
+                    }
+                });
+                // 设置a标签跳转参数，将当前点击的导航id值就行传递，便于导航编辑页面拿到该id进行数据查询，回显
+				window.onload = function () {
+					$('tr').each(function (i,v) {
+						if (i!==0) {
+						    var id = v.children[0].innerHTML;
+                            $(v).find('a').attr('href', `/admin/link/edit?data=${id}`)
+						}
+                    })
+                };
+
+                // 删除链接
+                $('tbody').click(function (ev) {
+                    var ev = ev || window.event;
+                    if (ev.target.title === 'delete') {
+                        var id = $(ev.target).parents('tr').children()[0].innerHTML;
+                        $.ajax({
+                            type: 'POST',
+                            url: '/admin/link/deleteLink',
+                            data: 'id=' + id,
+                            success: function (result) {
+                                if (result.success === 'success') {
+                                    alert(result.data);
+                                    // 删除成功，刷新当前页面
+                                    window.location.reload()
+                                } else {
+                                    alert(result.data)
+                                }
+                            }
+                        })
+                    }
+                })
+            })
+		</script>
+
+</body>
+</html>
+

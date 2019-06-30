@@ -1,0 +1,297 @@
+﻿        <!--公用的头部导航以及文件的引入，全部拆分-->
+		<!--因为ejs模板设置的默认目录是views,所以这里模板语法就会默认去找到views目录下对应文件名的文件-->
+        <%- include('header.html')%>
+
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="main-container-inner">
+				<a class="menu-toggler" id="menu-toggler" href="#">
+					<span class="menu-text"></span>
+				</a>
+
+				<!--公用的侧边菜单拆分-->
+				<%- include('sidebar.html')%>
+
+				<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="/admin">首页</a>
+							</li>
+							<li class="active">用户列表</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+
+					<div class="page-content">
+
+						<div class="page-header">
+							<h1>
+								用户列表
+							</h1>
+						</div><!-- /.page-header -->
+
+
+
+						<!--表格-->
+
+						<div class="table-responsive">
+							<table id="sample-table-1" class="table table-striped table-bordered table-hover center">
+								<thead>
+									<tr>
+
+										<th class="center">编号</th>
+										<th class="center">邮箱</th>
+										<th class="hidden-480 center">用户名</th>
+										<th class="hidden-480 center">状态</th>
+										<th class="center">角色</th>
+										<th class="center">
+											<i class="icon-time bigger-110 hidden-480"></i>
+											加入时间
+										</th>
+
+										<th width="80px;" class="center">操作</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<!--<tr class="">-->
+
+
+										<!--<td>-->
+											<!--1-->
+										<!--</td>-->
+										<!--<td>json</td>-->
+										<!--<td class="hidden-480">3,330</td>-->
+										<!--<td>管理员</td>-->
+										<!--<td>Feb 12</td>-->
+
+										<!--<td class="hidden-480">-->
+												<!--<button class="btn btn-xs btn-danger">-->
+													<!--<i class="icon-remove bigger-120 success"></i>-->
+												<!--</button>-->
+										<!--</td>-->
+
+										<!--<td>-->
+											<!--<div class="visible-md visible-lg hidden-sm hidden-xs btn-group center">-->
+
+
+												<!--<a href='/admin/user/edit' class="btn btn-xs btn-info">-->
+													<!--<i class="icon-edit bigger-120"></i>-->
+													<!--&lt;!&ndash; <a  style="color: white; text-decoration: none"></a> &ndash;&gt;-->
+												<!--</a>-->
+												<!--&nbsp;-->
+												<!--<button class="btn btn-xs btn-danger">-->
+													<!--<i class="icon-trash bigger-120"></i>-->
+												<!--</button>-->
+
+											<!--</div>-->
+
+										<!--</td>-->
+									<!--</tr>-->
+
+									<!--<tr class="">-->
+
+
+										<!--<td>-->
+											<!--2-->
+										<!--</td>-->
+										<!--<td>lisa</td>-->
+										<!--<td class="hidden-480">3,330</td>-->
+										<!--<td>普通用户</td>-->
+										<!--<td>Feb 12</td>-->
+
+										<!--<td class="hidden-480">-->
+												<!--<button class="btn btn-xs btn-success">-->
+													<!--<i class="icon-ok bigger-120"></i>-->
+												<!--</button>-->
+										<!--</td>-->
+
+										<!--<td>-->
+											<!--<div class="visible-md visible-lg hidden-sm hidden-xs btn-group center">-->
+
+
+												<!--<button class="btn btn-xs btn-info">-->
+													<!--<i class="icon-edit bigger-120"></i>-->
+												<!--</button>-->
+												<!--&nbsp;-->
+												<!--<button class="btn btn-xs btn-danger">-->
+													<!--<i class="icon-trash bigger-120"></i>-->
+												<!--</button>-->
+
+											<!--</div>-->
+
+										<!--</td>-->
+									<!--</tr>-->
+
+
+									<!--<tr class="">-->
+
+
+										<!--<td>-->
+											<!--3-->
+										<!--</td>-->
+										<!--<td>nodeing</td>-->
+										<!--<td class="hidden-480">3,330</td>-->
+										<!--<td>管理员</td>-->
+										<!--<td>Feb 12</td>-->
+
+										<!--<td class="hidden-480">-->
+												<!--<button class="btn btn-xs btn-success">-->
+													<!--<i class="icon-ok bigger-120"></i>-->
+												<!--</button>-->
+										<!--</td>-->
+
+										<!--<td>-->
+											<!--<div class="visible-md visible-lg hidden-sm hidden-xs btn-group center">-->
+
+
+												<!--<button class="btn btn-xs btn-info">-->
+													<!--<i class="icon-edit bigger-120"></i>-->
+												<!--</button>-->
+												<!--&nbsp;-->
+												<!--<button class="btn btn-xs btn-danger">-->
+													<!--<i class="icon-trash bigger-120"></i>-->
+												<!--</button>-->
+
+											<!--</div>-->
+
+										<!--</td>-->
+									<!--</tr>-->
+
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+				</div><!-- /.main-content -->
+
+			</div><!-- /.main-container-inner -->
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="icon-double-angle-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<%- include('footer.html')%>
+		<script src="/admin/js/jquery-2.0.3.min.js"></script>
+		<script>
+            $(function () {
+                // 获取数据，渲染用户列表
+                $.ajax({
+                    type: 'GET',
+                    url: '/admin/user/userList',
+                    success: function (result) {
+                        if (result.success === 'success') {   // 数据获取成功
+                            // 下面渲染用户列表
+
+							for(let i = 0; i< result.data.length;i++) {
+							    // 一条数据占一行
+								// 通过jq创建的元素，是jquery对象，不能使用原生的方法
+								var newTr = $('<tr></tr>');
+								var list_obj = result.data[i];  // 每一条数据对象，进行内层循环
+
+								for (let item in list_obj) {
+
+								    // 不展示密码
+								    if (item!== 'password') {
+                                        var newTd = $('<td></td>');
+                                        //   list_obj[item]   拿到对象中的每一项属性值，item 是属性名，动态就用 []
+                                        // newTd是jquery对象而不是原生对象，所以只能用jquery方法 ，就不能用innerHTML
+                                        newTd.html(list_obj[item]);
+									}
+									// 对状态值的Logo 进行补充
+									if (item === 'status') {
+                                        // list_obj[item] 在这种环境下等同于 list_obj.status
+                                        if (list_obj[item] == '0') {
+                                            newTd.html(`												<button class="btn btn-xs btn-success">
+													<i class="icon-ok bigger-120"></i>
+												</button>`)
+                                        } else {
+                                            newTd.html(`												<button class="btn btn-xs btn-danger">
+													<i class="icon-remove bigger-120"></i>
+												</button>`)
+                                        }
+                                    }
+                                    newTr.append(newTd)
+								}
+								var op = $('<td></td>');
+								op.html(`										<div class="visible-md visible-lg hidden-sm hidden-xs btn-group center">
+
+
+												<a href="/admin/user/edit" class="btn btn-xs btn-info">
+													<i class="icon-edit bigger-120" title="edit"></i>
+													<!-- <a  style="color: white; text-decoration: none"></a> -->
+												</a>
+												&nbsp;&nbsp;
+												<button class="btn btn-xs btn-danger">
+													<i class="icon-trash bigger-120" title="delete"></i>
+												</button>
+
+											</div>`);
+								newTr.append(op);
+								$('tbody').append(newTr)
+							}
+						} else {
+                            console.log('数据获取失败')
+						}
+                    }
+                });
+
+                // 编辑用户
+
+				// window.onload方法可以稍微改变执行顺序，等到页面元素dom全部加载完成，再来遍历tr就能够顺利找到所有新创建出来的tr元素了
+				window.onload = function () {
+				    $('tr').each(function (i,v) {
+						if (i!==0) {
+                            // 获取到除了第一行以外的所有原生tr 对象
+                            var id = v.children[0].innerHTML;
+                            // 将每个a标签的href进行修改，配置id参数
+                            $(v).find('a').attr('href', `/admin/user/edit?data=${id}`)
+                        }
+                    })
+                };
+                // 删除用户
+				$('tbody').click(function (ev) {
+					var ev = ev || window.event;
+					if (ev.target.title === 'delete') {
+					    // 获取当前点击按钮对应的用户 id
+						var id = $(ev.target).parents('tr').children('td').get(0).innerHTML;
+						$.ajax({
+							type: 'POST',
+							url: '/admin/user/deleteUser',
+							data: 'id=' + id,
+							success: function (result) {
+								if (result.success === 'success') {
+								    alert(result.data);
+									// 删除成功，刷新当前页面
+									window.location.reload()
+								} else {
+								    alert(result.data)
+								}
+                            }
+						})
+					}
+                })
+            })
+		</script>
+</body>
+</html>
+

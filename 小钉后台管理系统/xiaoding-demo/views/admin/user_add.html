@@ -1,0 +1,194 @@
+﻿        <!--公用的头部导航以及文件的引入，全部拆分-->
+        <%- include('header.html')%>
+
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="main-container-inner">
+				<a class="menu-toggler" id="menu-toggler" href="#">
+					<span class="menu-text"></span>
+				</a>
+
+				<!--公用的侧边菜单拆分-->
+				<%- include('sidebar.html')%>
+
+				<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="/admin">首页</a>
+							</li>
+							<li class="active">添加用户</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+
+					<div class="page-content">
+
+						<div class="page-header">
+							<h1>
+								添加用户
+							</h1>
+						</div><!-- /.page-header -->
+
+					<div class="form-horizontal" role="form">
+							<div class="form-group">
+								<label class="col-sm-2 control-label no-padding-right" for="form-field-1">用户名:</label>
+
+								<div class="col-sm-10">
+									<input type="text" id="form-field-1" placeholder="" class="col-xs-10 col-sm-5">
+								</div>
+							</div>
+
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label no-padding-right" for="form-field-2">邮箱:</label>
+
+								<div class="col-sm-10">
+									<input type="text" id="form-field-2" placeholder="" class="col-xs-10 col-sm-5">
+									<span class="message-email" style="margin-left: 20px; font-size: 16px"></span>
+								</div>
+							</div>
+
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label no-padding-right" for="form-field-3">密码:</label>
+
+								<div class="col-sm-10">
+									<input type="password" id="form-field-3" placeholder="" class="col-xs-10 col-sm-5">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label no-padding-right" for="form-field-4">确认密码:</label>
+
+								<div class="col-sm-10">
+									<input type="password" id="form-field-4" placeholder="" class="col-xs-10 col-sm-5">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label no-padding-right" for="form-field-1">角色:</label>
+
+								<div class="col-sm-10">
+									<label class="checkbox-inline">
+										<input type="radio" id="inlineCheckbox1" value="option1" name="role"> 管理员
+									</label>
+									<label class="checkbox-inline">
+										<input type="radio" id="inlineCheckbox2" value="option2" name="role"> 普通用户
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label no-padding-right" for="form-field-1">状态:</label>
+
+								<div class="col-sm-10">
+									<label class="checkbox-inline">
+										<input type="radio" id="inlineCheckbox3" value="option1" name="status"> 激活
+									</label>
+									<label class="checkbox-inline">
+										<input type="radio" id="inlineCheckbox4" value="option2" name="status"> 禁用
+									</label>
+								</div>
+							</div>
+						    <!--隐藏域发送用户注册时间-->
+						    <input type="hidden" id="create_time">
+							<div class="form-group">
+
+								<div class="col-sm-6 center">
+									<button class="btn btn-primary" id="add-save-btn">保存</button>
+									<a class="btn btn-danger" id="add-cancel-btn" href="/admin/user/list">取消</a>
+								</div>
+							</div>
+					</div>
+
+					</div>
+				</div><!-- /.main-content -->
+
+			</div><!-- /.main-container-inner -->
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="icon-double-angle-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+        <!--底部公用js部分进行拆分-->
+		<%- include('footer.html')%>
+		<script src="/admin/js/jquery-2.0.3.min.js"></script>
+		<script>
+			$(function () {
+			    // 验证邮箱是否存在
+				$('#form-field-2').blur(function () {
+                    $.get("/admin/user/check_email",{email: $("#form-field-2").val()},function (result) {
+                        if (result.success === 'success') {
+                            $('.message-email').html(result.data).css('color','green')
+                        } else {
+                            $('.message-email').html(result.data).css('color','red')
+                        }
+                    })
+                });
+
+				// 发送数据
+				$('#add-save-btn').click(function () {
+				    if ($('#form-field-1').val() === '' || $('#form-field-2').val() === '' || $('#form-field-3') === '') {
+				        alert('用户名,邮箱,密码不能为空！');
+						return
+					}
+					if ($('#form-field-3').val() !== $('#form-field-4').val()) {
+					    alert('两次输入密码不一致！');
+						return
+					}
+					// 为两个单选框按钮添加传值操作
+					var role = '';
+					var status = '';
+					// 强行将jquery对象转换成 原生对象
+					if ($('#inlineCheckbox1').get(0).checked) {
+					    role = '管理员'
+					} else {
+					    role = '普通用户'
+					}
+					if ($('#inlineCheckbox3').get(0).checked) {
+					    status = 0
+					} else {
+					    status = 1
+					}
+					// 保存新用户添加的时间
+					var createTime = new Date();
+					$('#create_time').val(createTime.getFullYear());
+					$.ajax({
+						type: 'POST',
+						url: '/admin/user/addUser',
+						data: 'username=' + $('#form-field-1').val() + '&email=' + $('#form-field-2').val() +
+								'&password=' + $('#form-field-3').val() + '&role=' + role + '&status='
+							     + status + '&create_time=' + $('#create_time').val(),
+						success: function (result) {
+							if (result.success === 'success') {
+							    alert(result.data);
+							    window.location.href = '/admin/user/list'
+							} else {
+							    alert(result.data)
+							}
+                        }
+					})
+                })
+            })
+		</script>
+</body>
+</html>
+

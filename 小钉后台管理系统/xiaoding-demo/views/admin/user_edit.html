@@ -1,0 +1,194 @@
+﻿        <%- include('header.html')%>
+		<!--因为ejs模板设置的默认目录是views,所以这里模板语法就会默认去找到views目录下对应文件名的文件-->
+
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="main-container-inner">
+				<a class="menu-toggler" id="menu-toggler" href="#">
+					<span class="menu-text"></span>
+				</a>
+
+				<!--公用的侧边菜单拆分-->
+				<%- include('sidebar.html')%>
+
+				<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="/admin">首页</a>
+							</li>
+							<li class="active">编辑用户</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+
+					<div class="page-content">
+
+						<div class="page-header">
+							<h1>
+								编辑用户
+							</h1>
+						</div><!-- /.page-header -->
+
+					<div class="form-horizontal" role="form">
+							<div class="form-group">
+								<label class="col-sm-2 control-label no-padding-right" for="form-field-1">用户名:</label>
+
+								<div class="col-sm-10">
+									<input type="text" id="form-field-1" placeholder="" class="col-xs-10 col-sm-5">
+								</div>
+							</div>
+
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label no-padding-right" for="form-field-2">邮箱:</label>
+
+								<div class="col-sm-10">
+									<input type="text" id="form-field-2" placeholder="" class="col-xs-10 col-sm-5">
+									<span class="message-email" style="margin-left: 20px; font-size: 16px"></span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label no-padding-right" for="form-field-1">角色:</label>
+
+								<div class="col-sm-10">
+									<label class="checkbox-inline">
+										<input type="radio" id="inlineCheckbox3" value="管理员" name="role"> 管理员
+									</label>
+									<label class="checkbox-inline">
+										<input type="radio" id="inlineCheckbox4" value="普通用户" name="role"> 普通用户
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label no-padding-right" for="form-field-1">状态:</label>
+
+								<div class="col-sm-10">
+									<label class="checkbox-inline">
+										<input type="radio" id="inlineCheckbox1" value="option1" name="status"> 激活
+									</label>
+									<label class="checkbox-inline">
+										<input type="radio" id="inlineCheckbox2" value="option2" name="status"> 禁用
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-sm-6 center">
+									<button class="btn btn-primary" id="edit-save-btn">保存</button>
+									<button class="btn btn-danger" id="edit-cancel-btn">取消</button>
+								</div>
+							</div>
+					</div>
+
+					</div>
+				</div><!-- /.main-content -->
+
+			</div><!-- /.main-container-inner -->
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="icon-double-angle-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+
+		<%- include('footer.html')%>
+		<script src="/admin/js/jquery-2.0.3.min.js"></script>
+		<script>
+			$(function () {
+                //     http://localhost:5000/admin/user/edit?data=1
+                var id = window.location.href.split('?')[1].split('=')[1];
+                // 进入编辑页面，发送ajax ，传入id 查询user表，获取数据回显
+				$.ajax({
+					type: 'POST',
+					url: '/admin/user/oldUser',
+					data: 'id=' + id,
+					success: function (result) {
+						if (result.success === 'success') {
+						    // 成功拿到对应点击的用户信息对象  result.data[0]
+							var oldUserData = result.data[0];
+							$('#form-field-1').val(oldUserData.username);
+							$('#form-field-2').val(oldUserData.email);
+							if (oldUserData.role === '管理员') {
+							    $('#inlineCheckbox3').attr('checked',true)
+							} else {
+                                $('#inlineCheckbox4').attr('checked',true)
+							}
+							if (oldUserData.status === 0) {
+                                $('#inlineCheckbox1').attr('checked',true)
+							} else {
+                                $('#inlineCheckbox2').attr('checked',true)
+							}
+						} else {
+						    console.log(result.success)
+						}
+                    }
+				});
+
+                /**
+				 * 修改完用户数据后，发送数据至后台写入数据库
+				 * 注意：修改数据回存，还是需要一个id标识符，因此依然需要本页面用户数据的id
+                 */
+
+                // 邮箱是否存在验证
+                $('#form-field-2').blur(function () {
+                    $.get("/admin/user/check_email",{email: $("#form-field-2").val()},function (result) {
+                        if (result.success === 'success') {
+                            $('.message-email').html(result.data).css('color','green')
+                        } else {
+                            $('.message-email').html(result.data).css('color','red')
+                        }
+                    })
+                });
+
+				$('#edit-save-btn').click(function () {
+				    if ($('#form-field-1').val() === '' || $('#form-field-2').val() === '') {
+				        alert('用户名和邮箱不能为空！！');
+						return
+					}
+				    // 先存储两个单选框的值
+					var role = '';
+					var status = '';
+					$('#inlineCheckbox3').get(0).checked ? role = $('#inlineCheckbox3').val() : role = $('#inlineCheckbox4').val();
+                    $('#inlineCheckbox1').get(0).checked ? status = 0 : status = 1;
+				    $.ajax({
+						type: 'POST',
+						url: '/admin/user/newUser',
+						data: 'username=' + $('#form-field-1').val() + '&email=' + $('#form-field-2').val() + '&role='
+						+ role + '&status=' + status + '&id=' + id,
+						success: function (result) {
+							if (result.success === 'success') {
+							    alert(result.data);
+							    window.location.href = '/admin/user/list'
+							} else {
+							    alert(result.data)
+							}
+                        }
+					})
+                });
+				$('#edit-cancel-btn').click(function () {
+					window.location.href = '/admin/user/list'
+                })
+            })
+		</script>
+</body>
+</html>
+
